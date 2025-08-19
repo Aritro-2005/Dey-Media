@@ -4,6 +4,7 @@
 void push(int);
 void pop();
 void display();
+void peak();
 int s[MAX];
 int top=-1;
 
@@ -13,7 +14,7 @@ int main()
     while(1)
     {
         printf("LIST OF MY FUNCTION: \n 1.Push element in stack: \n 2.Pop element from stack: \n 3.Display the stack: \n");
-        printf(" 4. EXIT\n Enter your choice : ");
+        printf(" 4.Peak element from stack: \n 5.EXIT\n Enter your choice : ");
         scanf("%d",&choice);
         switch(choice)
         {
@@ -29,8 +30,10 @@ int main()
                 display();
                 break;
             case 4:
+                peak();
+                break;
+            case 5:
                 exit(0);
-
             default:
                 printf("\nWrong Choice\n\n");
         }
@@ -76,4 +79,15 @@ void display()
         }
     }
         printf("\n");
+}
+void peak()
+{
+    if(top==-1)
+    {
+        printf("Stack is empty!!!\n");
+    }
+    else
+    {
+        printf("Peak element is : %d\n",s[top]);
+    }
 }
